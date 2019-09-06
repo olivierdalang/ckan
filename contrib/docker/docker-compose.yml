@@ -7,6 +7,7 @@ volumes:
   ckan_home:
   ckan_storage:
   pg_data:
+  pgdumps:
   certs:
   challenges:
 
@@ -99,3 +100,32 @@ services:
       - certs:/etc/letsencrypt
       - challenges:/challenges
       - /var/run/docker.sock:/var/run/docker.sock
+
+  # Dumps database for backups
+  pgdumper:
+    image: olivierdalang/pgdumper:0.0.1
+    volumes:
+      - pgdumps:/pgdumps/
+    environment:
+      - HOSTNAME=db
+      - USERNAME=ckan
+      - PGPASSWORD=${POSTGRES_PASSWORD}
+    restart: always
+
+  # Backups
+  backup:
+    image: olivierdalang/rclone-cron:1.48.0-r1
+    environment:
+      - CRON_SCHEDULE=0 * * * *
+      - COMMAND=rclone sync -v /backups MYS3:${BACKUP_DESTINATION_PATH}
+      - RCLONE_CONFIG_MYS3_TYPE=s3
+      - RCLONE_CONFIG_MYS3_ENDPOINT=${BACKUP_S3_ENDPOINT}
+      - RCLONE_CONFIG_MYS3_ACCESS_KEY_ID=${BACKUP_S3_ACCESS_KEY_ID}
+      - RCLONE_CONFIG_MYS3_SECRET_ACCESS_KEY=${BACKUP_S3_SECRET_ACCESS_KEY}
+      - RCLONE_CONFIG_MYS3_ACL=${BACKUP_S3_ACL}
+    volumes:
+      - pgdumps:/backups/pgdumps/
+      - ckan_config:/backups/ckan/etc/ckan
+      - ckan_storage:/backups/ckan/var/lib/ckan
+    restart: always
+
