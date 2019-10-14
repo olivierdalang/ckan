@@ -9316,7 +9316,7 @@ h4 small {
 }
 @media (min-width: 768px) {
   .hero {
-    background: url("../../../base/images/background-tile.png");
+    background: url("../../../base/images/bg.png");
   }
 }
 .hero:after {
