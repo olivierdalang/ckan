@@ -103,6 +103,21 @@ Pusher la branche vers "prod" :
 git push MY_REMOTE prod
 ```
 
+### Restauration
+
+On utilise le container backup pour récupérer les données :
+
+```
+# download the backups
+docker-compose run backup rclone copy -v MYS3:${BACKUP_DESTINATION_PATH} /backups/restoration
+
+# restore postgres
+docker-compose run pgdumper pg_restore /backups/restoration/
+
+
+# delete the restoration files (to avoid backing them up)
+docker-compose run backup rm -rf /backups/restoration
+```
 
 ## À faire
 

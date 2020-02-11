@@ -3,7 +3,6 @@
 version: "3"
 
 volumes:
-  ckan_config:
   ckan_home:
   ckan_storage:
   pg_data:
@@ -37,7 +36,7 @@ services:
       - DS_RO_PASS=${DATASTORE_READONLY_PASSWORD}
 
     volumes:
-      - ckan_config:/etc/ckan
+      - ../../docker_conf:/etc/ckan
       - ckan_home:/usr/lib/ckan
       - ckan_storage:/var/lib/ckan
 
@@ -70,7 +69,6 @@ services:
       dockerfile: contrib/docker/solr/Dockerfile
     restart: unless-stopped
 
-
   redis:
     container_name: redis
     image: redis:latest
@@ -94,7 +92,7 @@ services:
     environment:
       - EMAIL=olivier.dalang@gmail.com
       - DOMAIN=ckan.urbasen.org
-      - STAGING=false
+      - STAGING=${CERTBOT_STAGING}
       - HOOK=docker restart nginx
     volumes:
       - certs:/etc/letsencrypt
@@ -125,7 +123,6 @@ services:
       - RCLONE_CONFIG_MYS3_ACL=${BACKUP_S3_ACL}
     volumes:
       - pgdumps:/backups/pgdumps/
-      - ckan_config:/backups/ckan/etc/ckan
       - ckan_storage:/backups/ckan/var/lib/ckan
     restart: always
 

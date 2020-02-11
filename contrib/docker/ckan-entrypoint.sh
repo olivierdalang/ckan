@@ -12,6 +12,7 @@ set -e
 : ${CKAN_DATAPUSHER_URL:=}
 
 CONFIG="${CKAN_CONFIG}/production.ini"
+WHO="${CKAN_CONFIG}/who.ini"
 
 abort () {
   echo "$@" >&2
@@ -43,6 +44,10 @@ write_config () {
 # If we don't already have a config file, bootstrap
 if [ ! -e "$CONFIG" ]; then
   write_config
+fi
+
+if [ ! -e "$WHO" ]; then
+  cp $CKAN_VENV/src/ckan/ckan/config/who.ini "$WHO"
 fi
 
 # Get or create CKAN_SQLALCHEMY_URL

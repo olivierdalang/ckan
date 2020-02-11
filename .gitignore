@@ -22,7 +22,7 @@ build/*
 tmp/*
 solr_runtime/*
 fl_notes.txt
-*.ini
+# *.ini
 .noseids
 *~
 .idea
@@ -44,4 +44,4 @@ ckan_deb/DEBIAN/prerm
 node_modules/
 
 # docker
-contrib/docker/.env
+# contrib/docker/.env
