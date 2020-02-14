@@ -58,33 +58,7 @@ git checkout -b prod
 
 # configurer le repo
 git config receive.denyCurrentBranch updateInstead
-touch ./.git/hooks/post-update
-chmod +x ./.git/hooks/post-update
-```
-
-Créer le script dans `nano ./.git/hooks/post-update`:
-```
-#!/usr/bin/env bash
-set -e
-
-for REF in "$@"
-do
-    echo "----- POST-UPDATE SCRIPT -----"
-
-    CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
-    PUSHED_BRANCH=$(git rev-parse --symbolic --abbrev-ref $REF)
-
-    echo "current branch is : $CURRENT_BRANCH"
-    echo "you pushed : $PUSHED_BRANCH"
-
-    if [ "$CURRENT_BRANCH" != "$PUSHED_BRANCH" ]; then
-        echo "- NOT DEPLOYING -"
-    else
-        echo "- !!! DEPLOYING !!! -"
-        cd ../contrib/docker
-        docker-compose -f docker-compose.yml up --build -d --remove-orphans
-    fi
-done
+ln -s ../../git-deploy.sh ./.git/hooks/post-update
 ```
 
 Sur votre machine :
@@ -121,7 +95,7 @@ docker exec -it db bash -c "
 Pour importer les fichiers :
 
 ```
-docker-compose run --entrypoint="" backup rclone copy MYDROPBOX:/99_Backup/ckan_storage/ /backups/ckan_storage/
+docker-compose run --entrypoint="" backup rclone copy -v MYDROPBOX:/99_Backup/ckan/ckan_storage/ /backups/ckan_storage/
 ```
 
 ## À faire
