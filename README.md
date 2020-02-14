@@ -105,18 +105,23 @@ git push MY_REMOTE prod
 
 ### Restauration
 
-On utilise le container backup pour récupérer les données :
+Pour importer des données d'un dump existant, exectuer (compter >60s) :
 
 ```
-# download the backups
-docker-compose run backup rclone copy -v MYS3:${BACKUP_DESTINATION_PATH} /backups/restoration
+docker exec -it db bash -c "
+    apt-get update && apt-get install -y wget &&
+    wget https://www.dropbox.com/s/0sou03qbwwiyfia/ckan.custom?dl=1 -O ckan.custom &&
+    psql -U ckan -d postgres -c 'select pg_terminate_backend(pg_stat_activity.pid) from pg_stat_activity where pid <> pg_backend_pid();' &&
+    psql -U ckan -d postgres -c 'drop database if exists ckan;' &&
+    pg_restore -U ckan -d postgres -c -C /ckan.custom &&
+    rm /ckan.custom
+"
+```
 
-# restore postgres
-docker-compose run pgdumper pg_restore /backups/restoration/
+Pour importer les fichiers :
 
-
-# delete the restoration files (to avoid backing them up)
-docker-compose run backup rm -rf /backups/restoration
+```
+docker-compose run --entrypoint="" backup rclone copy MYDROPBOX:/99_Backup/ckan_storage/ /backups/ckan_storage/
 ```
 
 ## À faire

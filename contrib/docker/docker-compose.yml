@@ -122,6 +122,6 @@ services:
       - RCLONE_CONFIG_MYDROPBOX_TOKEN=${BACKUP_TOKEN}
     volumes:
       - pgdumps:/backups/pgdumps/
-      - ckan_storage:/backups/ckan/var/lib/ckan
+      - ckan_storage:/backups/ckan_storage/
     restart: always
 
