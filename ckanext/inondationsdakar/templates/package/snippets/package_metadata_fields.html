@@ -1,11 +1,26 @@
 {% ckan_extends %}
 
-{# You could remove 'free extras' from the package form like this, but we keep them for this example's tests.
-  {% block custom_fields %}
-  {% endblock %}
-#}
+{% block custom_fields %}
+<!-- free extra hidden -->
+{% endblock %}
 
 {% block package_metadata_fields %}
+
+  <div class="form-group">
+    <label class="control-label" for="field-theme">{{ _("Theme") }}</label>
+    <div class="controls">
+      <select id="field-theme" name="theme" data-module="autocomplete">
+        {% if h.themes() %}
+          <option value="">{{ _("Not specified") }}</option>
+          {% for theme in h.themes()  %}
+            <option value="{{ theme }}" {% if theme in data.get('theme', []) %}selected="selected"{% endif %}>{{ theme }}</option>
+          {% endfor %}
+        {% else %}
+          <option value="" disabled="disabled">{{ _("themes vocabulary not found") }}</option>
+        {% endif %}
+      </select>
+    </div>
+  </div>
 
   <div class="form-group">
     <label class="control-label" for="field-document_type">{{ _("Document type") }}</label>

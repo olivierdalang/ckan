@@ -16,7 +16,7 @@ nano .env
 # Préparer le stack
 docker-compose build
 # pip install sur le volume monté (et constater la création de ckan.egg-info):
-docker-compose run ckan --entrypoint="" ckan-pip install -e $CKAN_VENV/src/ckan/
+docker-compose run --entrypoint="" ckan ckan-pip install -e /usr/lib/ckan/venv/src/ckan/
 
 # Lancer le stack
 docker-compose up --build -d
