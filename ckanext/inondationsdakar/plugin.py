@@ -87,9 +87,16 @@ class InondationsDakarPlugin(plugins.SingletonPlugin,
         })
         return schema
 
-    def dataset_facets(self, facets_dict, package_type):
-
+    def _append_facets(self, facets_dict):
         facets_dict['vocab_themes'] = tk._('Theme')
         facets_dict['vocab_document_types'] = tk._('Document type')
-
         return facets_dict
+
+    def dataset_facets(self, facets_dict, package_type):
+        return self._append_facets(facets_dict)
+
+    def group_facets(self, facets_dict, group_type, package_type):
+        return self._append_facets(facets_dict)
+
+    def organization_facets(self, facets_dict, organization_type, package_type):
+        return self._append_facets(facets_dict)
