@@ -3,10 +3,10 @@
 {% block package_description %}
   {{ super() }}
 
-  {# Add our custom country_code field to the dataset read page. #}
-  {% if pkg.get('country_code') %}
-    <section id="dataset-country_code" class="resources module-content">
-    <p><strong>Country Code</strong>: {{ pkg.country_code[0] }}</p>
+  {# Add our custom document_type field to the dataset read page. #}
+  {% if pkg.get('document_type') %}
+    <section id="dataset-document_type" class="resources">
+    <p><strong>Type de document</strong>: {{ pkg.document_type[0] }}</p>
     </section>
   {% endif %}
 

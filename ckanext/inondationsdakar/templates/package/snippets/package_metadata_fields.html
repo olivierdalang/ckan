@@ -7,13 +7,18 @@
 
 {% block package_metadata_fields %}
 
-  <div class="control-group">
-    <label class="control-label" for="field-country_code">{{ _("Country Code") }}</label>
+  <div class="form-group">
+    <label class="control-label" for="field-document_type">{{ _("Document type") }}</label>
     <div class="controls">
-      <select id="field-country_code" name="country_code" data-module="autocomplete">
-        {% for country_code in h.country_codes()  %}
-          <option value="{{ country_code }}" {% if country_code in data.get('country_code', []) %}selected="selected"{% endif %}>{{ country_code }}</option>
-        {% endfor %}
+      <select id="field-document_type" name="document_type" data-module="autocomplete">
+        {% if h.document_types() %}
+          <option value="">{{ _("Not specified") }}</option>
+          {% for document_type in h.document_types()  %}
+            <option value="{{ document_type }}" {% if document_type in data.get('document_type', []) %}selected="selected"{% endif %}>{{ document_type }}</option>
+          {% endfor %}
+        {% else %}
+          <option value="" disabled="disabled">{{ _("document_types vocabulary not found") }}</option>
+        {% endif %}
       </select>
     </div>
   </div>
