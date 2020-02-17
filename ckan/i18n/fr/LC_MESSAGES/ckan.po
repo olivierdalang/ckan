@@ -4922,3 +4922,15 @@ msgstr "Rechercher des utilisateurs"
 #: ckan/views/user.py:588
 msgid "Your password must be 8 characters or longer."
 msgstr "Votre mot de passe doit comporter au moins 8 caractères."
+
+msgid "Theme"
+msgstr "Thème"
+
+msgid "Not specified"
+msgstr "Non spécifié"
+
+msgid "Not specified"
+msgstr "Non spécifié"
+
+msgid "Document type"
+msgstr "Type de document"

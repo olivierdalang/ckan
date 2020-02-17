@@ -22,6 +22,18 @@ docker-compose run --entrypoint="" ckan ckan-pip install -e /usr/lib/ckan/venv/s
 docker-compose up --build -d
 ```
 
+## Dev
+
+### i18n
+
+```
+docker-compose exec ckan bash -c '
+  cd /usr/lib/ckan/venv/src/ckan/ && \
+  source $CKAN_VENV/bin/activate && \
+  python setup.py compile_catalog --use-fuzzy --locale fr
+'
+```
+
 
 ## Déploiement
 
