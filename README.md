@@ -39,19 +39,7 @@ Sur le VPS :
 ```
 # installer les dépendances
 sudo apt-get update
-
-## install docker
-wget https://download.docker.com/linux/ubuntu/dists/xenial/pool/stable/amd64/docker-ce_18.06.1~ce~3-0~ubuntu_amd64.deb
-sudo dpkg -i docker-ce_18.06.1~ce~3-0~ubuntu_amd64.deb
-rm docker-ce_18.06.1~ce~3-0~ubuntu_amd64.deb
-sudo usermod -aG docker $USER
-
-## installer docker-compose
-sudo curl -L "https://github.com/docker/compose/releases/download/1.25.0-rc2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose
-
-## installer git
-sudo apt-get install git
+sudo apt-get install docker.io docker-compose git
 
 # initialiser un repo
 git init urbackan
