@@ -173,6 +173,7 @@ entry_points = {
         'example_iuploader = ckanext.example_iuploader.plugin:ExampleIUploader',
         'example_idatastorebackend = ckanext.example_idatastorebackend.plugin:ExampleIDatastoreBackendPlugin',
         'example_ipermissionlabels = ckanext.example_ipermissionlabels.plugin:ExampleIPermissionLabelsPlugin',
+        'inondationsdakar = ckanext.inondationsdakar.plugin:InondationsDakarPlugin',
     ],
     'ckan.system_plugins': [
         'domain_object_mods = ckan.model.modification:DomainObjectModificationExtension',
