@@ -8108,7 +8108,7 @@ h4 small {
 }
 @media (min-width: 768px) {
   .hero {
-    background: url("../../../base/images/bg.png");
+    background: url("../../../base/images/background-tile.png");
   }
 }
 .hero:after {
@@ -9341,7 +9341,7 @@ iframe {
 }
 .ie8 .hero,
 .ie7 .hero {
-  background: url("../../../base/images/bg.png");
+  background: url("../../../base/images/background-tile.png");
 }
 .ie8 .hero .hero-primary.module-popup .box,
 .ie7 .hero .hero-primary.module-popup .box {
