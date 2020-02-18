@@ -66,5 +66,8 @@ zope.interface==4.3.2
 # considered to be unsafe in a requirements file:
 # setuptools                # via repoze.who, zope.interface
 
+
+# Extensions for UrbaCKAN
 # until https://github.com/okfn/ckanext-facetcollapse/pull/3 is merged
 https://github.com/olivierdalang/ckanext-facetcollapse/archive/cb2f0cf6a25bc3145896d29b2a8774289179befc.zip#egg=ckanext-facetcollapse
+ckanext-pdfview==0.0.5
