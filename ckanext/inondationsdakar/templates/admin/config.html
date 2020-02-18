@@ -1,0 +1,11 @@
+{% ckan_extends %}
+
+{% import 'macros/form.html' as form %}
+
+{% block admin_form %}
+
+  {{ super() }}
+
+  {{ form.markdown('ckanext.inondationsdakar.detailed_text', id='field-ckanext.inondationsdakar.detailed_text', label=_('Texte détaillé'), value=data['ckanext.inondationsdakar.detailed_text'], error=errors['ckanext.inondationsdakar.detailed_text']) }}
+
+{% endblock %}

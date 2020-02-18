@@ -1,0 +1,27 @@
+{% ckan_extends %}
+
+{% block footer_nav %}
+<strong>{{ _('En savoir plus') }}</strong>
+<ul class="list-unstyled">
+    <li><a href="{{ h.url_for(controller='home', action='about') }}">{{ _('Contact') }}</a></li>
+    {% set doc_url = 'http://docs.ckan.org/en/{0}/user-guide.html'.format(g.ckan_doc_version) %}
+    {% set api_url = 'http://docs.ckan.org/en/{0}/api/'.format(g.ckan_doc_version) %}
+    {% set locale = h.lang()[0:2] %}
+    {% if locale != 'en' %}
+      {% set doc_url = 'https://translate.google.com/translate?hl=&sl=en&tl={0}&u={1}'.format(locale, doc_url| urlencode) %}
+      {% set api_url = 'https://translate.google.com/translate?hl=&sl=en&tl={0}&u={1}'.format(locale, api_url| urlencode) %}
+    {% endif %}
+    <li><a href="{{ doc_url }}" target="_blank">{{ _("Guide d'utilisation") }}</a></li>
+    <li><a href="{{ api_url }}" target="_blank">{{ _('CKAN API') }}</a></li>
+</ul>
+<strong>{{ _('Organisations partenaires') }}</strong>
+<ul class="list-unstyled organizations">
+  {% for org in h.organizations() %}
+  <li>
+    <a href="/organization/{{ org['name'] }}" title="{{ org['title'] }}">
+      <img src="{{ org['image_display_url'] }}" alt="{{ org['title'] }}" class="logo"/>
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}

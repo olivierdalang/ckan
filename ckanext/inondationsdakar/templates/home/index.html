@@ -1,0 +1,41 @@
+{% ckan_extends %}
+
+{% block primary_content %}
+
+
+<div role="main" class="hero">
+  <div class="container">
+    {% block search %}
+      {% snippet 'home/snippets/search.html' %}
+    {% endblock %}
+  </div>
+</div>
+<div role="main" class="home">
+  <div class="container">
+    <div class="wrapper no-nav">
+
+      <div class="row">
+
+        <div class="col-md-5">
+          <div class="box">
+            <div class="inner bigger">
+              {{ h.render_markdown(g.site_intro_text) }}
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-7">
+          <div class="box">
+            <div class="inner">
+              {{h.render_markdown(h.detailed_text())}}
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

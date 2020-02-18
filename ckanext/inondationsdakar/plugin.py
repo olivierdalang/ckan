@@ -1,5 +1,8 @@
 # encoding: utf-8
 
+from six import text_type
+
+from distutils.util import strtobool
 import logging
 
 import ckan.plugins as plugins
@@ -26,11 +29,36 @@ class InondationsDakarPlugin(plugins.SingletonPlugin,
         # Add this plugin's templates dir to CKAN's extra_template_paths, so
         # that CKAN will use this plugin's custom templates.
         tk.add_template_directory(config, 'templates')
+        tk.add_resource('fanstatic', 'inondationsdakar')
+        tk.add_public_directory(config, 'public')
+
+    def update_config_schema(self, schema):
+
+        ignore_missing = tk.get_validator('ignore_missing')
+
+        schema.update({
+            'ckanext.inondationsdakar.detailed_text': [ignore_missing, text_type],
+        })
+
+        return schema
 
     def get_helpers(self):
+
+        def organization_list():
+            org_list = tk.get_action('organization_list')({},{})
+            for name in org_list:
+                org_show = tk.get_action('organization_show')({},{'id':name})
+                for extra in org_show['extras']:
+                    if extra['key'] == 'partenaire' and extra['state'] == 'active':
+                        if strtobool(extra['value']):
+                            yield org_show
+                        break
+
         return {
             'document_types': document_types,
             'themes': themes,
+            'detailed_text': lambda: tk.config.get("ckanext.inondationsdakar.detailed_text"),
+            'organizations': organization_list,
         }
 
     def is_fallback(self):
