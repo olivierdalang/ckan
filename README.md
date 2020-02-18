@@ -27,6 +27,14 @@ docker-compose up --build -d
 ### i18n
 
 ```
+# update catalog
+docker-compose exec ckan bash -c '
+  cd /usr/lib/ckan/venv/src/ckan/ && \
+  source $CKAN_VENV/bin/activate && \
+  python setup.py update_catalog --locale fr -w 80
+'
+
+# compile
 docker-compose exec ckan bash -c '
   cd /usr/lib/ckan/venv/src/ckan/ && \
   source $CKAN_VENV/bin/activate && \
