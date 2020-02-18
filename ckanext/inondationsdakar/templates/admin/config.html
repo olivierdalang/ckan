@@ -8,4 +8,6 @@
 
   {{ form.markdown('ckanext.inondationsdakar.detailed_text', id='field-ckanext.inondationsdakar.detailed_text', label=_('Texte détaillé'), value=data['ckanext.inondationsdakar.detailed_text'], error=errors['ckanext.inondationsdakar.detailed_text']) }}
 
+  {{ form.input('ckanext.inondationsdakar.tweeter_feed', id='field-ckanext.inondationsdakar.tweeter_feed', label=_('Tweeter feed (publish.tweeter.com)'), value=data['ckanext.inondationsdakar.tweeter_feed'], error=errors['ckanext.inondationsdakar.tweeter_feed']) }}
+
 {% endblock %}
