@@ -49,8 +49,8 @@ RUN ckan-pip install -U pip && \
     ckan-pip install --upgrade --no-cache-dir -r $CKAN_VENV/src/ckan/requirement-setuptools.txt && \
     ckan-pip install --upgrade --no-cache-dir -r $CKAN_VENV/src/ckan/requirements.txt
 
-# # Dev deps  # TODO-PROD : remove
-# RUN ckan-pip install --upgrade --no-cache-dir -r $CKAN_VENV/src/ckan/dev-requirements.txt
+# Dev deps  # TODO-PROD : remove
+RUN ckan-pip install --upgrade --no-cache-dir -r $CKAN_VENV/src/ckan/dev-requirements.txt
 
 # Setup CKAN
 ADD . $CKAN_VENV/src/ckan/
