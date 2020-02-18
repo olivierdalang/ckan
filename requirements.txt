@@ -70,4 +70,6 @@ zope.interface==4.3.2
 # Extensions for UrbaCKAN
 # until https://github.com/okfn/ckanext-facetcollapse/pull/3 is merged
 https://github.com/olivierdalang/ckanext-facetcollapse/archive/cb2f0cf6a25bc3145896d29b2a8774289179befc.zip#egg=ckanext-facetcollapse
+ckanext-geoview==0.0.16
+ckantoolkit==0.0.4 # required by ckanext-geoview
 ckanext-pdfview==0.0.5

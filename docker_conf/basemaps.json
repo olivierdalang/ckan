@@ -1,0 +1,26 @@
+[
+  {
+    "title": "OSM - positron",
+    "type": "custom",
+    "url": "http://basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png",
+    "attribution": "Background tiles by Carto.com, background data by Openstreetmap.org under CC BY SA"
+  },
+  {
+    "title": "OSM",
+    "type": "custom",
+    "url": "http://tile.openstreetmap.org/{z}/{x}/{y}.png",
+    "attribution": "Background data by Openstreetmap.org under CC BY SA"
+  },
+  {
+    "title": "Bing (satellite)",
+    "type": "custom",
+    "url": "http://ecn.t3.tiles.virtualearth.net/tiles/a{q}.jpeg?g=1",
+    "attribution": "Background data by Bing.com"
+  },
+  {
+    "title": "Google (satellite)",
+    "type": "custom",
+    "url": "https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}",
+    "attribution": "Background data by Google.com"
+  }
+]
