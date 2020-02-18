@@ -50,6 +50,7 @@ RUN ckan-pip install -U pip && \
     ckan-pip install --upgrade --no-cache-dir -r $CKAN_VENV/src/ckan/requirements.txt
 
 # Dev deps  # TODO-PROD : remove
+ADD ./dev-requirements.txt $CKAN_VENV/src/ckan/dev-requirements.txt
 RUN ckan-pip install --upgrade --no-cache-dir -r $CKAN_VENV/src/ckan/dev-requirements.txt
 
 # Setup CKAN
