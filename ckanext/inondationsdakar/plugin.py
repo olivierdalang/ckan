@@ -38,7 +38,7 @@ class InondationsDakarPlugin(plugins.SingletonPlugin,
 
         schema.update({
             'ckanext.inondationsdakar.detailed_text': [ignore_missing, text_type],
-            'ckanext.inondationsdakar.tweeter_feed': [ignore_missing, text_type],
+            'ckanext.inondationsdakar.twitter_feed': [ignore_missing, text_type],
         })
 
         return schema
@@ -59,7 +59,7 @@ class InondationsDakarPlugin(plugins.SingletonPlugin,
             'document_types': document_types,
             'themes': themes,
             'detailed_text': lambda: tk.config.get("ckanext.inondationsdakar.detailed_text"),
-            'tweeter_feed': lambda: tk.config.get("ckanext.inondationsdakar.tweeter_feed"),
+            'twitter_feed': lambda: tk.config.get("ckanext.inondationsdakar.twitter_feed"),
             'organizations': organization_list,
         }
 
