@@ -106,6 +106,8 @@ Pour importer les fichiers :
 
 ```
 docker-compose run --entrypoint="" backup rclone copy -v MYDROPBOX:/99_Backup/ckan/ckan_storage/ /backups/ckan_storage/
+# update permissions for ckan user
+docker-compose run --entrypoint="" backup chown -R 900 /backups/ckan_storage/
 ```
 
 ## À faire
