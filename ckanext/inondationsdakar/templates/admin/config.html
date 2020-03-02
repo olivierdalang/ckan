@@ -10,6 +10,11 @@
 
   {{ form.markdown('ckanext.inondationsdakar.latest_news', id='field-ckanext.inondationsdakar.latest_news', label=_('Dernière news'), value=data['ckanext.inondationsdakar.latest_news'], error=errors['ckanext.inondationsdakar.latest_news']) }}
 
+  {% set field_url_2 = 'ckanext.inondationsdakar.latest_news_img' %}
+  {% set is_upload_2 = data[field_url_2] and not data[field_url_2].startswith('http') %}
+  {% set is_url_2 = data[field_url_2] and data[field_url_2].startswith('http') %}
+  {{ form.image_upload(data, errors, is_upload_enabled=h.uploads_enabled(), is_url=is_url_2, is_upload=is_upload_2, upload_label = _('Image latest news'), url_label=_('Image latest news'),  field_url=field_url_2, field_upload='ckanext.inondationsdakar.latest_news_img_upload', field_clear='ckanext.inondationsdakar.latest_news_img_clear' )}}
+
   {{ form.input('ckanext.inondationsdakar.twitter_feed', id='field-ckanext.inondationsdakar.twitter_feed', label=_('Twitter feed (publish.twitter.com)'), value=data['ckanext.inondationsdakar.twitter_feed'], error=errors['ckanext.inondationsdakar.twitter_feed']) }}
 
 {% endblock %}

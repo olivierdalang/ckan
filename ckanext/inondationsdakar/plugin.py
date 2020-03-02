@@ -61,6 +61,7 @@ class InondationsDakarPlugin(plugins.SingletonPlugin,
             'themes': themes,
             'detailed_text': lambda: tk.config.get("ckanext.inondationsdakar.detailed_text"),
             'latest_news': lambda: tk.config.get("ckanext.inondationsdakar.latest_news"),
+            'latest_news_img': lambda: tk.config.get("ckanext.inondationsdakar.latest_news_img"),
             'twitter_feed': lambda: tk.config.get("ckanext.inondationsdakar.twitter_feed"),
             'organizations': organization_list,
         }

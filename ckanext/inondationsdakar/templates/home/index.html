@@ -51,6 +51,7 @@
       <div class="col-md-8">
         <div class="box">
           <div class="inner">
+            <img src="{{ h.url_for_static_or_external(h.latest_news_img()) }}" />
             {{h.render_markdown(h.latest_news())}}
           </div>
         </div>

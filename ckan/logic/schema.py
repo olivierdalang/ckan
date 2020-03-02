@@ -734,6 +734,11 @@ def default_update_configuration_schema(
         'ckan.homepage_style': [ignore_missing, is_positive_integer],
         'logo_upload': [ignore_missing, unicode_safe],
         'clear_logo_upload': [ignore_missing, unicode_safe],
+        # TODO : THIS SHOULD BE IN ckanext/inondationsdakar
+        'ckanext.inondationsdakar.latest_news_img': [ignore_missing, unicode_safe],
+        'ckanext.inondationsdakar.latest_news_img_upload': [ignore_missing, unicode_safe],
+        'ckanext.inondationsdakar.latest_news_img_clear': [ignore_missing, unicode_safe],
+        # /THIS SHOULD BE IN ckanext/inondationsdakar
     }
 
 

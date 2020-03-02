@@ -1203,6 +1203,14 @@ def config_option_update(context, data_dict):
     upload.update_data_dict(data_dict, 'ckan.site_logo',
                             'logo_upload', 'clear_logo_upload')
     upload.upload(uploader.get_max_image_size())
+
+    # TODO : THIS SHOULD BE IN ckanext/inondationsdakar
+    upload_2 = uploader.get_uploader('admin')
+    upload_2.update_data_dict(data_dict, 'ckanext.inondationsdakar.latest_news_img',
+                            'ckanext.inondationsdakar.latest_news_img_upload', 'ckanext.inondationsdakar.latest_news_img_clear')
+    upload_2.upload(uploader.get_max_image_size())
+    # /THIS SHOULD BE IN ckanext/inondationsdakar
+
     data, errors = _validate(data_dict, schema, context)
     if errors:
         model.Session.rollback()
@@ -1216,6 +1224,14 @@ def config_option_update(context, data_dict):
             image_path = 'uploads/admin/'
 
             value = h.url_for_static('{0}{1}'.format(image_path, value))
+
+        # TODO : THIS SHOULD BE IN ckanext/inondationsdakar
+        if key == 'ckanext.inondationsdakar.latest_news_img' and value and not value.startswith('http')\
+                and not value.startswith('/'):
+            image_path = 'uploads/admin/'
+
+            value = h.url_for_static('{0}{1}'.format(image_path, value))
+        # /THIS SHOULD BE IN ckanext/inondationsdakar
 
         # Save value in database
         model.set_system_info(key, value)
