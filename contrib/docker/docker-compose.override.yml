@@ -12,7 +12,8 @@ services:
     restart: "no"
 
   backup:
-    command: exit 0
+    entrypoint: ""
+    command: echo "no backup on dev"
     restart: "no"
 
   pgdumper:
