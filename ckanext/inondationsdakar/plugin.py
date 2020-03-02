@@ -38,7 +38,9 @@ class InondationsDakarPlugin(plugins.SingletonPlugin,
 
         schema.update({
             'ckanext.inondationsdakar.detailed_text': [ignore_missing, text_type],
-            'ckanext.inondationsdakar.latest_news': [ignore_missing, text_type],
+            'ckanext.inondationsdakar.latest_news_1': [ignore_missing, text_type],
+            'ckanext.inondationsdakar.latest_news_2': [ignore_missing, text_type],
+            'ckanext.inondationsdakar.latest_news_link': [ignore_missing, text_type],
             'ckanext.inondationsdakar.twitter_feed': [ignore_missing, text_type],
         })
 
@@ -60,7 +62,9 @@ class InondationsDakarPlugin(plugins.SingletonPlugin,
             'document_types': document_types,
             'themes': themes,
             'detailed_text': lambda: tk.config.get("ckanext.inondationsdakar.detailed_text"),
-            'latest_news': lambda: tk.config.get("ckanext.inondationsdakar.latest_news"),
+            'latest_news_1': lambda: tk.config.get("ckanext.inondationsdakar.latest_news_1"),
+            'latest_news_2': lambda: tk.config.get("ckanext.inondationsdakar.latest_news_2"),
+            'latest_news_link': lambda: tk.config.get("ckanext.inondationsdakar.latest_news_link"),
             'latest_news_img': lambda: tk.config.get("ckanext.inondationsdakar.latest_news_img"),
             'twitter_feed': lambda: tk.config.get("ckanext.inondationsdakar.twitter_feed"),
             'organizations': organization_list,

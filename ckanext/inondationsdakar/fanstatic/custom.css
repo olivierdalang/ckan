@@ -72,6 +72,11 @@ footer img.logo{
 }
 
 .twitteritos{
-  max-height: 350px;
+  max-height: 450px;
   overflow-y: scroll;
+}
+
+.lastnews img{
+  margin: 1em 0;
+  width: 100%;
 }

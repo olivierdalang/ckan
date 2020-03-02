@@ -44,15 +44,18 @@
         <div class="box twitteritos">
           <div class="inner">
             {{h.twitter_feed()|safe}}
-            </div>
+          </div>
         </div>
       </div>
 
       <div class="col-md-8">
-        <div class="box">
+        <div class="box lastnews">
           <div class="inner">
-            <img src="{{ h.url_for_static_or_external(h.latest_news_img()) }}" />
-            {{h.render_markdown(h.latest_news())}}
+            {{h.render_markdown(h.latest_news_1())}}
+            <a href="{{h.latest_news_link()}}">
+              <img src="{{ h.url_for_static_or_external(h.latest_news_img()) }}" />
+            </a>
+            {{h.render_markdown(h.latest_news_2())}}
           </div>
         </div>
       </div>
