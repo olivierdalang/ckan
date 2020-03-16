@@ -78,14 +78,15 @@ services:
     image: redis:latest
     restart: unless-stopped
 
-  marblecutter:
-    image: olivierdalang/marblecutter-virtual:0.0.2
-    entrypoint: python
-    command: server.py
-    environment:
-      - FLASK_ENV=development
-      - GDAL_DISABLE_READDIR_ON_OPEN=YES
-      - CPL_CURL_VERBOSE=YES
+  # disabled, we are using the default http://tiles.rdnt.io service
+  # marblecutter:
+  #   image: olivierdalang/marblecutter-virtual:0.0.2
+  #   entrypoint: python
+  #   command: server.py
+  #   environment:
+  #     - FLASK_ENV=development
+  #     - GDAL_DISABLE_READDIR_ON_OPEN=YES
+  #     - CPL_CURL_VERBOSE=YES
 
   nginx:
     container_name: nginx
