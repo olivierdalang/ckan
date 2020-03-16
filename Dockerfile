@@ -57,8 +57,8 @@ RUN ckan-pip install --upgrade --no-cache-dir -r $CKAN_VENV/src/ckan/dev-require
 ADD . $CKAN_VENV/src/ckan/
 RUN ckan-pip install -e $CKAN_VENV/src/ckan/ && \
     ln -s $CKAN_VENV/src/ckan/ckan/config/who.ini $CKAN_CONFIG/who.ini && \
-    cp -v $CKAN_VENV/src/ckan/contrib/docker/ckan-entrypoint.sh /ckan-entrypoint.sh && \
-    chmod +x /ckan-entrypoint.sh && \
+    ln -s $CKAN_VENV/src/ckan/contrib/docker/ckan-entrypoint.sh /ckan-entrypoint.sh && \
+    chmod +x $CKAN_VENV/src/ckan/contrib/docker/ckan-entrypoint.sh && \
     chown -R ckan:ckan $CKAN_HOME $CKAN_VENV $CKAN_CONFIG $CKAN_STORAGE_PATH
 
 
