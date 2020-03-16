@@ -72,7 +72,7 @@ zope.interface==4.3.2
 https://github.com/olivierdalang/ckanext-facetcollapse/archive/cb2f0cf6a25bc3145896d29b2a8774289179befc.zip#egg=ckanext-facetcollapse
 # includes https://github.com/ckan/ckanext-geoview/pull/71 is merged
 # includes zoom buttons and coggeotif support
-https://github.com/olivierdalang/ckanext-geoview/archive/77279dbcbb18d34865eb96b996d98e64f5d67147.zip#egg=ckanext-geoview
+https://github.com/olivierdalang/ckanext-geoview/archive/b4741a02b244bdcfa6456fba417930d57d6f8c4c.zip#egg=ckanext-geoview
 ckantoolkit==0.0.4 # required by ckanext-geoview
 ckanext-pdfview==0.0.5
 https://github.com/ckan/ckanext-googleanalytics/archive/a365fcdf6d0178aeb53ad6f46a3794eb05bca84b.zip#egg=ckanext-googleanalytics
