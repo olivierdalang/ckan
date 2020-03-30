@@ -143,8 +143,20 @@ docker-compose run --entrypoint="" backup chown -R 900 /backups/ckan_storage/
 
 Les Geotiffs sont supportés grâce à une modification du plugin geoview.
 
-Pour créer un géotiff :
-- ouvrir le shell OSGeo4W
-- `gdalinfo --version`
-- si la version est inférieure à 3.1, taper `gdal-dev-env`, et vérifier avec `gdalinfo --version`
-- lancer la commande suivante en remplaçant FICHIER_ENTREE par le nom du tiff en entrée, et FICHIER_SORTIE par le nom du tiff en sortie : `gdal_translate FICHIER_ENTREE.tif FICHIER_SORTIE.tif -of COG -co TILING_SCHEME=GoogleMapsCompatible -co COMPRESS=JPEG`
+Créer un COG (dans le OSGeo4W shell):
+```
+# vérifier la version de GDAL
+gdalinfo --version
+# si la version est inférieure à 3.1 :
+gdal-dev-env
+# revérifier, puis lancer la commande suivante en remplaçant FICHIER_ENTREE par le nom du tiff en entrée, et FICHIER_SORTIE par le nom du tiff en sortie
+gdal_translate FICHIER_ENTREE.tif FICHIER_SORTIE.tif -of COG -co TILING_SCHEME=GoogleMapsCompatible -co COMPRESS=JPEG
+```
+
+Tester le COG (dans le OSGeo4W shell):
+```
+py3_env
+curl https://raw.githubusercontent.com/OSGeo/gdal/master/gdal/swig/python/samples/validate_cloud_optimized_geotiff.py -O validate_cog.py
+python validate_cog.py FICHIER_SORTIE.tif
+# ça doit écrire `FICHIER_SORTIE is a valid cloud optimized GeoTIFF`
+```
