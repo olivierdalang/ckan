@@ -136,3 +136,15 @@ docker-compose run --entrypoint="" backup chown -R 900 /backups/ckan_storage/
 
 - licenses : qu'est-ce qu'on utilise
 - visibilité des données
+
+## Notes
+
+### COG (Geotiffs)
+
+Les Geotiffs sont supportés grâce à une modification du plugin geoview.
+
+Pour créer un géotiff :
+- ouvrir le shell OSGeo4W
+- `gdalinfo --version`
+- si la version est inférieure à 3.1, taper `gdal-dev-env`, et vérifier avec `gdalinfo --version`
+- lancer la commande suivante en remplaçant FICHIER_ENTREE par le nom du tiff en entrée, et FICHIER_SORTIE par le nom du tiff en sortie : `gdal_translate FICHIER_ENTREE.tif FICHIER_SORTIE.tif -of COG -co TILING_SCHEME=GoogleMapsCompatible -co COMPRESS=JPEG`
