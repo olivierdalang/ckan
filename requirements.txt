@@ -81,3 +81,4 @@ google-api-python-client>=1.6.1 # required by ckanext-googleanalytics
 pyOpenSSL>=16.2.0 # required by ckanext-googleanalytics
 # not pip-installable (see https://github.com/vrk-kpa/ckanext-ytp-comments/issues/8)
 -e  git+https://github.com/vrk-kpa/ckanext-ytp-comments@6c912e7cea8bbf32c9994a7b371e00e09120433e#egg=ckanext-ytp-comments
+lxml~=4.4.1 # required by ckanext-ytp-comments
