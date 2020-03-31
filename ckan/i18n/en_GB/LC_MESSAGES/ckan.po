@@ -1415,7 +1415,7 @@ msgstr "{actor} added the tag {tag} to the dataset {dataset}"
 
 #: ckan/lib/activity_streams.py:63
 msgid "{actor} updated the group {group}"
-msgstr "{actor} updated the group {project}"
+msgstr "{actor} updated the group {group}"
 
 #: ckan/lib/activity_streams.py:66
 msgid "{actor} updated the organization {organization}"
@@ -1439,7 +1439,7 @@ msgstr "{actor} updated their profile"
 
 #: ckan/lib/activity_streams.py:81
 msgid "{actor} deleted the group {group}"
-msgstr "{actor} deleted the group {project}"
+msgstr "{actor} deleted the group {group}"
 
 #: ckan/lib/activity_streams.py:84
 msgid "{actor} deleted the organization {organization}"
@@ -1459,7 +1459,7 @@ msgstr "{actor} deleted the resource {resource} from the dataset {dataset}"
 
 #: ckan/lib/activity_streams.py:97
 msgid "{actor} created the group {group}"
-msgstr "{actor} created the group {project}"
+msgstr "{actor} created the group {group}"
 
 #: ckan/lib/activity_streams.py:100
 msgid "{actor} created the organization {organization}"
@@ -1495,7 +1495,7 @@ msgstr "{actor} started following {user}"
 
 #: ckan/lib/activity_streams.py:124
 msgid "{actor} started following {group}"
-msgstr "{actor} started following {project}"
+msgstr "{actor} started following {group}"
 
 #: ckan/lib/datapreview.py:265 ckan/templates/group/edit_base.html:16
 #: ckan/templates/organization/edit_base.html:17
@@ -3247,7 +3247,7 @@ msgstr "Search datasets..."
 
 #: ckan/templates/group/snippets/feeds.html:3
 msgid "Datasets in group: {group}"
-msgstr "Datasets in group: {project}"
+msgstr "Datasets in group: {group}"
 
 #: ckan/templates/group/snippets/feeds.html:4
 #: ckan/templates/organization/snippets/feeds.html:4
@@ -3615,7 +3615,7 @@ msgstr "Create Organisation"
 
 #: ckan/templates/organization/snippets/feeds.html:3
 msgid "Datasets in organization: {group}"
-msgstr "Datasets in organisation: {project}"
+msgstr "Datasets in organisation: {group}"
 
 #: ckan/templates/organization/snippets/help.html:4
 #: ckan/templates/organization/snippets/helper.html:4
