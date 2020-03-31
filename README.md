@@ -94,7 +94,7 @@ Pour importer des données d'un dump existant, exectuer (compter >60s) :
 ```
 docker exec -it db bash -c "
     apt-get update && apt-get install -y wget &&
-    wget https://www.dropbox.com/s/0sou03qbwwiyfia/ckan.custom?dl=1 -O ckan.custom &&
+    wget https://www.dropbox.com/s/ygyk436m9uo3bxr/ckan.custom?dl=1 -O ckan.custom &&
     psql -U ckan -d postgres -c 'select pg_terminate_backend(pg_stat_activity.pid) from pg_stat_activity where pid <> pg_backend_pid();' &&
     psql -U ckan -d postgres -c 'drop database if exists ckan;' &&
     pg_restore -U ckan -d postgres -c -C /ckan.custom &&
