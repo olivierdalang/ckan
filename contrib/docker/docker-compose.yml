@@ -43,6 +43,23 @@ services:
       - ../../docker_conf:/etc/ckan
       - ckan_storage:/var/lib/ckan
 
+  cron:
+    image: mcuadros/ofelia@sha256:7ab920b89f282ff8f8b1847120fee9c57120991f45b9e2524e342ef9be603876
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    environment:
+      - ADMIN_API_KEY=${ADMIN_API_KEY}
+    command: daemon --docker
+    labels:
+      ofelia.enabled: "true"
+      # ofelia.job-exec.sendmail.schedule: "@every 5s"
+      # ofelia.job-exec.sendmail.container: "ckan"
+      # ofelia.job-exec.sendmail.command: 'ckan-paster --plugin=ckan post -c /etc/ckan/production.ini /api/action/send_email_notifications'
+      # the above doesn't work, so we use an API call, see https://lists-archive.okfn.org/pipermail/ckan-dev/2013-November/006184.html
+      ofelia.job-local.sendmail-over-api.schedule: "@hourly"
+      ofelia.job-local.sendmail-over-api.container: "ckan"
+      ofelia.job-local.sendmail-over-api.command: 'wget --post-data="{}" --no-check-certificate --header "Authorization: $${ADMIN_API_KEY}" https://nginx/api/action/send_email_notifications'
+
   datapusher:
     container_name: datapusher
     image: clementmouchet/datapusher
