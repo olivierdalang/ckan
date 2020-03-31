@@ -114,14 +114,9 @@ docker-compose run --entrypoint="" backup chown -R 900 /backups/ckan_storage/
 
 ### Déploiement
 
-- backups
 - utiliser `uwsgi` (ou autre) à la place de `paster server` (https://github.com/ckan/ckan/issues/4893)
 - probablement nécessaire de faire tourner un worker celery (full-text search)
 - meilleur gestion de la config production (https://github.com/ckan/ckan/issues/4894)
-
-### Customization
-
-- home page (image, couleurs...)
 
 ### Traductions
 
@@ -130,7 +125,16 @@ docker-compose run --entrypoint="" backup chown -R 900 /backups/ckan_storage/
 ### Extensions
 
 - ckanext-extractor : full-text search (pdfs...)
-- ckanext-pdfview : PDF preview
+- ckanext-restricted : permettre de restreindre des resources (on voit que metadata)
+- ckanext-spatial : classification spatiale
+
+### Notifications
+
+- configurer "enable notification" sur on par défault
+
+### Hacks
+
+- modifier ckanext-ytd-comments pour l'insérer dans le flux d'activité (et donc notifications)
 
 ### Guide de publication
 
