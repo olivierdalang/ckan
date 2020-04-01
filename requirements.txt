@@ -79,5 +79,5 @@ https://github.com/ckan/ckanext-googleanalytics/archive/a365fcdf6d0178aeb53ad6f4
 gdata>=2.0.0 # required by ckanext-googleanalytics
 google-api-python-client>=1.6.1 # required by ckanext-googleanalytics
 pyOpenSSL>=16.2.0 # required by ckanext-googleanalytics
-# fix made pip-installable (see https://github.com/vrk-kpa/ckanext-ytp-comments/issues/8), french translation, customized template, and activity stream
-https://github.com/olivierdalang/ckanext-ytp-comments/archive/ddca7d274bdb6ee5cf74b09c14923394af679ab8.zip#egg=ckanext-ytp-comments
+# must be installed as editable (see https://github.com/vrk-kpa/ckanext-ytp-comments/issues/8), french translation, customized template, and activity stream
+-e git+https://github.com/olivierdalang/ckanext-ytp-comments.git@6f5ab5c40d7ca13ec6813590afe9d2c80346d549#egg=ckanext-ytp-comments
