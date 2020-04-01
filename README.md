@@ -45,7 +45,7 @@ docker-compose exec ckan bash -c '
 docker-compose exec ckan bash -c '
   cd /usr/lib/ckan/venv/src/ckan/ && \
   source $CKAN_VENV/bin/activate && \
-  python setup.py compile_catalog --locale fr && \
+  python setup.py compile_catalog --use-fuzzy --locale fr && \
   python setup.py compile_catalog --locale en
 '
 ```
