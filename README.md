@@ -31,14 +31,22 @@ docker-compose up --build -d
 docker-compose exec ckan bash -c '
   cd /usr/lib/ckan/venv/src/ckan/ && \
   source $CKAN_VENV/bin/activate && \
-  python setup.py update_catalog --locale fr -w 80
+  python setup.py init_catalog --locale en -w 78
+'
+
+# batch rename groupe->projet
+docker-compose exec ckan bash -c '
+  cd /usr/lib/ckan/venv/src/ckan/ && \
+  source $CKAN_VENV/bin/activate && \
+  python scripts/batch_update_locale_for_customization.py
 '
 
 # compile
 docker-compose exec ckan bash -c '
   cd /usr/lib/ckan/venv/src/ckan/ && \
   source $CKAN_VENV/bin/activate && \
-  python setup.py compile_catalog --use-fuzzy --locale fr
+  python setup.py compile_catalog --locale fr && \
+  python setup.py compile_catalog --locale en
 '
 ```
 

@@ -1,0 +1,362 @@
+# English translations for ckan.
+# Copyright (C) 2018 ORGANIZATION
+# This file is distributed under the same license as the ckan project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ckan 2.8.0b0\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2018-03-27 16:10+0200\n"
+"PO-Revision-Date: 2020-04-01 23:05+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ckanext/example_theme_docs/v10_custom_snippet/templates/snippets/example_theme_most_popular_groups.html:20
+#: ckanext/example_theme_docs/v11_HTML_and_CSS/templates/snippets/example_theme_most_popular_groups.html:19
+msgid "This group has no description"
+msgstr "This project has no description"
+
+#: ckanext/reclineview/theme/templates/recline_graph_form.html:7
+msgid "Group (Axis 1)"
+msgstr "Project (Axis 1)"
+
+#: ckanext/stats/templates/ckanext/stats/index.html:108
+#: ckanext/stats/templates/ckanext/stats/index.html:182
+msgid "Largest Groups"
+msgstr "Largest Projects"
+
+#: ckan/logic/converters.py:173 ckan/logic/validators.py:246
+#: ckanext/stats/templates/ckanext/stats/index.html:113
+msgid "Group"
+msgstr "Project"
+
+#: ckanext/stats/templates/ckanext/stats/index.html:127
+msgid "No groups"
+msgstr "No projects"
+
+#: ckan/controllers/feed.py:234 ckan/controllers/group.py:128
+#: ckan/controllers/group.py:226 ckan/controllers/group.py:394
+#: ckan/controllers/group.py:504 ckan/controllers/group.py:537
+#: ckan/controllers/group.py:567 ckan/controllers/group.py:578
+#: ckan/controllers/group.py:632 ckan/controllers/group.py:653
+#: ckan/controllers/group.py:714 ckan/controllers/group.py:746
+#: ckan/controllers/group.py:779 ckan/controllers/group.py:836
+#: ckan/controllers/group.py:933 ckan/controllers/package.py:1265
+#: ckan/controllers/package.py:1280 ckan/logic/action/create.py:1373
+#: ckan/views/feed.py:143
+msgid "Group not found"
+msgstr "Project not found"
+
+#: ckan/controllers/group.py:130 ckan/controllers/group.py:581
+msgid "Incorrect group type"
+msgstr "Incorrect project type"
+
+#: ckan/controllers/group.py:307 ckan/controllers/home.py:62
+#: ckan/controllers/package.py:257 ckan/lib/helpers.py:1037
+#: ckan/templates/group/base_form_page.html:6 ckan/templates/group/edit.html:4
+#: ckan/templates/group/edit_base.html:3 ckan/templates/group/edit_base.html:8
+#: ckan/templates/group/index.html:3 ckan/templates/group/index.html:6
+#: ckan/templates/group/index.html:18 ckan/templates/group/members.html:3
+#: ckan/templates/group/read_base.html:3 ckan/templates/group/read_base.html:6
+#: ckan/templates/header.html:88 ckan/templates/package/group_list.html:5
+#: ckan/templates/package/read_base.html:20 ckan/templates/revision/diff.html:16
+#: ckan/templates/revision/read.html:84 ckan/tests/config/test_middleware.py:632
+#: ckan/views/home.py:47
+msgid "Groups"
+msgstr "Projects"
+
+#: ckan/controllers/group.py:461
+msgid "Unauthorized to create a group"
+msgstr "Unauthorized to create a project"
+
+#: ckan/controllers/group.py:615 ckan/controllers/group.py:630
+#, python-format
+msgid "Unauthorized to delete group %s"
+msgstr "Unauthorized to delete project %s"
+
+#: ckan/controllers/group.py:623
+msgid "Group has been deleted."
+msgstr "Project has been deleted."
+
+#: ckan/controllers/group.py:670
+#, python-format
+msgid "Unauthorized to create group %s members"
+msgstr "Unauthorized to create project %s members"
+
+#: ckan/controllers/group.py:712
+#, python-format
+msgid "Unauthorized to add member to group %s"
+msgstr "Unauthorized to add member to project %s"
+
+#: ckan/controllers/group.py:731 ckan/controllers/group.py:744
+#, python-format
+msgid "Unauthorized to delete group %s members"
+msgstr "Unauthorized to delete project %s members"
+
+#: ckan/controllers/group.py:738
+msgid "Group member has been deleted."
+msgstr "Project member has been deleted."
+
+#: ckan/controllers/group.py:786
+msgid "CKAN Group Revision History"
+msgstr "CKAN Project Revision History"
+
+#: ckan/controllers/group.py:790
+msgid "Recent changes to CKAN Group: "
+msgstr "Recent changes to CKAN Project: "
+
+#: ckan/lib/activity_streams.py:63
+msgid "{actor} updated the group {group}"
+msgstr "{actor} updated the project {group}"
+
+#: ckan/lib/activity_streams.py:81
+msgid "{actor} deleted the group {group}"
+msgstr "{actor} deleted the project {group}"
+
+#: ckan/lib/activity_streams.py:97
+msgid "{actor} created the group {group}"
+msgstr "{actor} created the project {group}"
+
+#: ckan/lib/mailer.py:135 ckan/templates/home/snippets/stats.html:23
+msgid "group"
+msgstr "project"
+
+#: ckan/logic/validators.py:256
+msgid "That group name or ID does not exist."
+msgstr "That project name or ID does not exist."
+
+#: ckan/logic/validators.py:412
+msgid "Group name already exists in database"
+msgstr "Project name already exists in database"
+
+#: ckan/logic/action/create.py:807
+msgid "Trying to create an organization as a group"
+msgstr "Trying to create an organization as a project"
+
+#: ckan/logic/action/create.py:1454 ckan/logic/action/create.py:1462
+msgid "You must be logged in to follow a group."
+msgstr "You must be logged in to follow a project."
+
+#: ckan/logic/auth/create.py:31 ckan/logic/auth/update.py:45
+#, python-format
+msgid "User %s not authorized to edit these groups"
+msgstr "User %s not authorized to edit these projects"
+
+#: ckan/logic/auth/create.py:119
+#, python-format
+msgid "User %s not authorized to create groups"
+msgstr "User %s not authorized to create projects"
+
+#: ckan/logic/auth/create.py:189
+msgid "Group was not found."
+msgstr "Project was not found."
+
+#: ckan/logic/auth/create.py:244 ckan/logic/auth/update.py:115
+#, python-format
+msgid "User %s not authorized to edit group %s"
+msgstr "User %s not authorized to edit project %s"
+
+#: ckan/logic/auth/delete.py:82
+#, python-format
+msgid "User %s not authorized to delete groups"
+msgstr "User %s not authorized to delete projects"
+
+#: ckan/logic/auth/delete.py:86
+#, python-format
+msgid "User %s not authorized to delete group %s"
+msgstr "User %s not authorized to delete project %s"
+
+#: ckan/logic/auth/get.py:170
+#, python-format
+msgid "User %s not authorized to read group %s"
+msgstr "User %s not authorized to read project %s"
+
+#: ckan/logic/auth/update.py:145
+#, python-format
+msgid "User %s not authorized to change state of group %s"
+msgstr "User %s not authorized to change state of project %s"
+
+#: ckan/logic/auth/update.py:162
+#, python-format
+msgid "User %s not authorized to edit permissions of group %s"
+msgstr "User %s not authorized to edit permissions of project %s"
+
+#: ckan/templates/group/base_form_page.html:7
+msgid "Add a Group"
+msgstr "Add a Project"
+
+#: ckan/templates/group/base_form_page.html:11
+msgid "Group Form"
+msgstr "Project Form"
+
+#: ckan/templates/group/confirm_delete.html:11
+msgid "Are you sure you want to delete group - {name}?"
+msgstr "Are you sure you want to delete project - {name}?"
+
+#: ckan/templates/group/edit.html:12
+msgid "Edit Group"
+msgstr "Edit Project"
+
+#: ckan/templates/group/index.html:13 ckan/templates/user/dashboard_groups.html:7
+msgid "Add Group"
+msgstr "Add Project"
+
+#: ckan/templates/group/index.html:20
+msgid "Search groups..."
+msgstr "Search projects..."
+
+#: ckan/templates/group/index.html:29
+msgid "There are currently no groups for this site"
+msgstr "There are currently no projects for this site"
+
+#: ckan/templates/group/member_new.html:80
+msgid ""
+" <p><strong>Admin:</strong> Can edit group information, as well as manage "
+"organization members.</p> <p><strong>Member:</strong> Can add/remove datasets"
+" from groups</p> "
+msgstr ""
+" <p><strong>Admin:</strong> Can edit project information, as well as manage "
+"organization members.</p> <p><strong>Member:</strong> Can add/remove datasets"
+" from projects</p> "
+
+#: ckan/templates/group/new.html:3 ckan/templates/group/new.html:5
+#: ckan/templates/group/new.html:7
+msgid "Create a Group"
+msgstr "Create a Project"
+
+#: ckan/templates/group/new_group_form.html:17
+msgid "Update Group"
+msgstr "Update Project"
+
+#: ckan/templates/group/new_group_form.html:19
+msgid "Create Group"
+msgstr "Create Project"
+
+#: ckan/templates/group/snippets/feeds.html:3
+msgid "Datasets in group: {group}"
+msgstr "Datasets in project: {group}"
+
+#: ckan/templates/group/snippets/group_form.html:10
+msgid "My Group"
+msgstr "My Project"
+
+#: ckan/templates/group/snippets/group_form.html:18
+msgid "my-group"
+msgstr "my-project"
+
+#: ckan/templates/group/snippets/group_form.html:20
+msgid "A little information about my group..."
+msgstr "A little information about my project..."
+
+#: ckan/templates/group/snippets/group_form.html:38
+msgid "Are you sure you want to delete this Group?"
+msgstr "Are you sure you want to delete this Project?"
+
+#: ckan/templates/group/snippets/group_form.html:41
+msgid "Save Group"
+msgstr "Save Project"
+
+#: ckan/templates/group/snippets/group_item.html:43
+msgid "Remove dataset from this group"
+msgstr "Remove dataset from this project"
+
+#: ckan/templates/group/snippets/helper.html:4
+msgid "What are Groups?"
+msgstr "What are Projects?"
+
+#: ckan/templates/group/snippets/helper.html:8
+msgid ""
+" You can use CKAN Groups to create and manage collections of datasets. This "
+"could be to catalogue datasets for a particular project or team, or on a "
+"particular theme, or as a very simple way to help people find and search your"
+" own published datasets. "
+msgstr ""
+" You can use CKAN Projects to create and manage collections of datasets. This"
+" could be to catalogue datasets for a particular project or team, or on a "
+"particular theme, or as a very simple way to help people find and search your"
+" own published datasets. "
+
+#: ckan/templates/home/snippets/about_text.html:1
+msgid ""
+" <p>CKAN is the world’s leading open-source data portal platform.</p> <p>CKAN"
+" is a complete out-of-the-box software solution that makes data accessible "
+"and usable – by providing tools to streamline publishing, sharing, finding "
+"and using data (including storage of data and provision of robust data APIs)."
+" CKAN is aimed at data publishers (national and regional governments, "
+"companies and organizations) wanting to make their data open and "
+"available.</p> <p>CKAN is used by governments and user groups worldwide and "
+"powers a variety of official and community data portals including portals for"
+" local, national and international government, such as the UK’s <a "
+"href=\"http://data.gov.uk\">data.gov.uk</a> and the European Union’s <a "
+"href=\"http://publicdata.eu/\">publicdata.eu</a>, the Brazilian <a "
+"href=\"http://dados.gov.br/\">dados.gov.br</a>, Dutch and Netherland "
+"government portals, as well as city and municipal sites in the US, UK, "
+"Argentina, Finland and elsewhere.</p> <p>CKAN: <a "
+"href=\"http://ckan.org/\">http://ckan.org/</a><br /> CKAN Tour: <a "
+"href=\"http://ckan.org/tour/\">http://ckan.org/tour/</a><br /> Features "
+"overview: <a "
+"href=\"http://ckan.org/features/\">http://ckan.org/features/</a></p> "
+msgstr ""
+" <p>CKAN is the world’s leading open-source data portal platform.</p> <p>CKAN"
+" is a complete out-of-the-box software solution that makes data accessible "
+"and usable – by providing tools to streamline publishing, sharing, finding "
+"and using data (including storage of data and provision of robust data APIs)."
+" CKAN is aimed at data publishers (national and regional governments, "
+"companies and organizations) wanting to make their data open and "
+"available.</p> <p>CKAN is used by governments and user projects worldwide and"
+" powers a variety of official and community data portals including portals "
+"for local, national and international government, such as the UK’s <a "
+"href=\"http://data.gov.uk\">data.gov.uk</a> and the European Union’s <a "
+"href=\"http://publicdata.eu/\">publicdata.eu</a>, the Brazilian <a "
+"href=\"http://dados.gov.br/\">dados.gov.br</a>, Dutch and Netherland "
+"government portals, as well as city and municipal sites in the US, UK, "
+"Argentina, Finland and elsewhere.</p> <p>CKAN: <a "
+"href=\"http://ckan.org/\">http://ckan.org/</a><br /> CKAN Tour: <a "
+"href=\"http://ckan.org/tour/\">http://ckan.org/tour/</a><br /> Features "
+"overview: <a "
+"href=\"http://ckan.org/features/\">http://ckan.org/features/</a></p> "
+
+#: ckan/templates/home/snippets/stats.html:23
+msgid "groups"
+msgstr "projects"
+
+#: ckan/templates/package/group_list.html:14
+msgid "Associate this group with this dataset"
+msgstr "Associate this project with this dataset"
+
+#: ckan/templates/package/group_list.html:14
+msgid "Add to group"
+msgstr "Add to project"
+
+#: ckan/templates/package/group_list.html:23
+msgid "There are no groups associated with this dataset"
+msgstr "There are no projects associated with this dataset"
+
+#: ckan/templates/snippets/search_result_text.html:22
+msgid "No groups found for \"{query}\""
+msgstr "No projects found for \"{query}\""
+
+#: ckan/templates/snippets/search_result_text.html:24
+msgid "No groups found"
+msgstr "No projects found"
+
+#: ckan/templates/user/dashboard.html:22
+#: ckan/templates/user/dashboard_groups.html:12
+msgid "My Groups"
+msgstr "My Projects"
+
+#: ckan/templates/user/dashboard_groups.html:20
+msgid "You are not a member of any groups."
+msgstr "You are not a member of any projects."
+
+#: ckan/templates/user/new.html:28
+msgid "Create datasets, groups and other exciting things"
+msgstr "Create datasets, projects and other exciting things"
+
