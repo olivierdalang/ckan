@@ -2,11 +2,11 @@
 # Copyright (C) 2018 ORGANIZATION
 # This file is distributed under the same license as the ckan project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
-# 
+#
 # Translators:
 # Adrià Mercader <adria.mercader@okfn.org>, 2018
 # Mayeul Kauffmann, 2018
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
@@ -3451,7 +3451,7 @@ msgstr ""
 "  la mise à disposition de solides  données API). CKAN   est destiné aux  "
 "éditeurs (gouvernements régionaux et nationaux,  sociétés et  organisations)"
 " qui  veulent  mettre à disposition leurs données .</p> <p> CKAN est utilisé"
-" par des gouvernements et des projets d’utilisateurs  dans le monde entier "
+" par des gouvernements et des groupes d’utilisateurs  dans le monde entier "
 "et  permet le fonctionnement d’une variété de portails officiels et "
 "communautaires , notamment des portails pour des gouvernements locaux, "
 "nationaux et internationaux, comme  <a "
