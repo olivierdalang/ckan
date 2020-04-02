@@ -2,3 +2,4 @@ _docker_conf
 Dockerfile
 contrib/docker/docker-compose.yml
 contrib/docker/docker-compose.override.yml
+.git

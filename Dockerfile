@@ -58,13 +58,11 @@ ADD . $CKAN_VENV/src/ckan/
 RUN ckan-pip install -e $CKAN_VENV/src/ckan/ && \
     ln -s $CKAN_VENV/src/ckan/ckan/config/who.ini $CKAN_CONFIG/who.ini && \
     ln -s $CKAN_VENV/src/ckan/contrib/docker/ckan-entrypoint.sh /ckan-entrypoint.sh && \
-    chmod +x $CKAN_VENV/src/ckan/contrib/docker/ckan-entrypoint.sh && \
-    chown -R ckan:ckan $CKAN_HOME $CKAN_VENV $CKAN_CONFIG $CKAN_STORAGE_PATH
+    chmod +x $CKAN_VENV/src/ckan/contrib/docker/ckan-entrypoint.sh
 
 
 ENTRYPOINT ["/ckan-entrypoint.sh"]
 
-USER ckan
 EXPOSE 5000
 
 CMD ["ckan-paster","serve","/etc/ckan/production.ini"]
