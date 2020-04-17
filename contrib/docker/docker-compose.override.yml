@@ -19,8 +19,8 @@ services:
   pgdumper:
     restart: unless-stopped
 
-  postfix:
-    image: eeacms/postfix:2.10-3.6@sha256:84e62c7c73b260030e2e88a88b6a0a9a27b93d2a6b4959a50031eb1fae032482
+  maildev:
+    image: maildev/maildev:2.0.0-beta3
     restart: unless-stopped
-    environment:
-      - MTP_HOST=local.mail
+    ports:
+      - 1080:1080
