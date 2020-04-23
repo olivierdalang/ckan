@@ -8,6 +8,10 @@ services:
     volumes:
       - ../../:/usr/lib/ckan/venv/src/ckan/
 
+  db:
+    ports:
+      - 5432:5432
+
   certbot:
     restart: "no"
 
